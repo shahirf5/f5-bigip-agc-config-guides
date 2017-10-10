@@ -4,4 +4,4 @@ Repository for Access Guided Config (AGC) files and templates. Configuration Gui
 1. **SAML Identity Provider for SaaS Application** : SaaS Application Template
 2. **SAML Service Provider** : IdP Connector Template
 
-Further, Configuration Guides for each are created under respective Usecase Pack Version branch.
+Configuration Guides for corresponding to Usecase Pack Version 2.0 are created in thie branch.
