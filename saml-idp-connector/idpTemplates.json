@@ -1,0 +1,1038 @@
+[
+        {
+          "idpConnector": {
+            "entityId": "https://sts.windows.net/$tenentID$/",
+            "signArtifactResolutionRq": false,
+            "singleLogoutBinding": "http-redirect",
+            "ssoBinding": "http-redirect",
+            "ssoUri": "https://login.windows.net/$tenentID$/saml2",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "tenentID",
+                "displayLabel": "Tenant ID",
+                "helpText": "Provide the tenant ID. For eg, Azure AD sets the SSO URI to https://login.windows.net/tenantID/saml2, where tenantID is the Azure AD tenant.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri",
+                  "idpConnector.entityId"
+                ]
+              }
+            ]
+          },
+          "templateName": "Azure AD",
+          "templateLabel": "Azure AD",
+          "image": "img/appIcons/azure.jpg",
+          "description": "IDP Template for Azure AD",
+          "documentLink": "https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference"
+        },
+        {
+          "templateName": "Azure ADFS",
+          "templateLabel": "Azure ADFS",
+          "image": "img/appIcons/azure.jpg",
+          "description": "ADFS IdP Connector Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "idpConnector": {
+            "entityId": "$protocol$://$idpHostname$/adfs/services/trust",
+            "ssoBinding": "http-redirect",
+            "ssoUri": "$protocol$://$idpHostname$/adfs/ls/",
+            "artifactResolutionServiceAddr": "",
+            "artifactResolutionServicePort": "",
+            "artifactResolutionServiceUrl": "$protocol$://$idpHostname$/adfs/services/trust/artifactresolution",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha256",
+            "singleLogoutBinding": "http-post",
+            "singleLogoutUri": "$protocol$://$idpHostname$/adfs/ls/",
+            "singleLogoutResponseUri": "$protocol$://$idpHostname$/adfs/ls/"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IdP Hostname",
+                "type": "inputText",
+                "helpText": "Provide the hostname of your Identity Provider. For example, test.example.com or test.example.com:port.",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri",
+                  "idpConnector.artifactResolutionServiceUrl",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.singleLogoutResponseUri"
+                ]
+              },
+              {
+                    "name": "protocol",
+                    "displayLabel": "Scheme",
+                    "type": "dropdown",
+                    "helpText": "Select the protocol.",
+                    "values": {
+                        "https": {
+                            "displayValue": "https",
+                            "value": "https"
+                        },
+                        "http": {
+                            "displayValue": "http",
+                            "value": "http"
+                        }
+                    },
+                    "targetProperties": [
+                        "idpConnector.entityId",
+                        "idpConnector.singleLogoutResponseUri",
+                        "idpConnector.singleLogoutUri",
+                        "idpConnector.artifactResolutionServiceUrl",
+                        "idpConnector.ssoUri"
+                    ]
+                }
+            ]
+          }
+        },
+        {
+          "templateName": "BIG-IP IdP",
+          "templateLabel": "BIG-IP IdP",
+          "image": "img/appIcons/bigip.jpg",
+          "description": "BIG-IP IdP Connector Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "idpConnector": {
+            "entityId": "$protocol$://$idpHostname$/",
+            "ssoBinding": "http-post",
+            "ssoUri": "$protocol$://$idpHostname$/saml/idp/profile/redirectorpost/sso",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-post",
+            "singleLogoutUri": "$protocol$://$idpHostname$/saml/idp/profile/post/sls",
+            "singleLogoutResponseUri": "$protocol$://$idpHostname$/saml/idp/profile/post/slr"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IdP Hostname",
+                "type": "inputText",
+                "helpText": "Provide the hostname of your Identity Provider.",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.singleLogoutResponseUri"
+                ]
+              },
+              {
+                    "name": "protocol",
+                    "displayLabel": "Scheme",
+                    "type": "dropdown",
+                    "helpText": "Select the protocol.",
+                    "values": {
+                        "https": {
+                            "displayValue": "https",
+                            "value": "https"
+                        },
+                        "http": {
+                            "displayValue": "http",
+                            "value": "http"
+                        }
+                    },
+                    "targetProperties": [
+                        "idpConnector.entityId",
+                        "idpConnector.ssoUri",
+                        "idpConnector.singleLogoutUri",
+                        "idpConnector.singleLogoutResponseUri"
+                    ]
+                }
+            ]
+          }
+        },
+        {
+          "idpConnector": {
+            "entityId": "https://$idpHostname$/",
+            "signArtifactResolutionRq": false,
+            "ssoBinding": "http-redirect",
+            "ssoUri": "https://$idpHostname$/affwebservices/public/saml2sso",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IDP Hostname",
+                "helpText": "Provide the hostname of your Identity Provider. For eg- test.example.com or test.example.com:port",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "CA",
+          "templateLabel": "CA",
+          "image": "img/appIcons/ca.jpg",
+          "description": "CA IDP Connector template"
+        },
+        {
+          "idpConnector": {
+            "entityId": "$entityId$",
+            "signArtifactResolutionRq": false,
+            "signatureType": "rsa-sha256",
+            "ssoUri": "$ssoURI$",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "entityId",
+                "displayLabel": "Entity ID / SAML Issuer URL",
+                "helpText": "Provide the Issuer URL configured in Centrify. The entity ID will have a format like https://cloud.centrify.com/SAML/appspecificName.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-\/]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), slash ( / ) or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId"
+                ]
+              },
+              {
+                "name": "ssoURI",
+                "displayLabel": "SSO URL",
+                "helpText": "Provide the SSO URL configured in Centrify. The URL will look like - https://abcd0100.my.centrify.com/applogin/appKey/1234abcde-51c9-461c-a3bf-1234abcde/customerId/abcd0100",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "url-validator"
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "Centrify",
+          "templateLabel": "Centrify",
+          "image": "img/appIcons/centrify.jpg",
+          "description": "Centrify IDP Connector template"
+        },
+        {
+          "idpConnector": {
+            "entityId": "https://accounts.google.com/o/saml2?idpid=$idpId$",
+            "signArtifactResolutionRq": false,
+            "ssoUri": "https://accounts.google.com/o/saml2/idp?idpid=$idpId$",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "%{session.logon.last.idp}",
+            "idpMatchingValue": "google"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpId",
+                "displayLabel": "IDP Identifier",
+                "helpText": "Provide the IDP identifier from the Google SSO URL. For eg - If SSO URL is https://accounts.google.com/o/saml2?idpid=abcdefg, then the IDP id is abcdefg",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "Google Suite",
+          "templateLabel": "Google Suite",
+          "image": "img/appIcons/gsuite.jpg",
+          "description": "Google IDP Connector Template"
+        },
+        {
+          "idpConnector": {
+            "entityId": "https://$idpHostname$/nidp/saml2/metadata",
+            "signArtifactResolutionRq": false,
+            "ssoUri": "https://$idpHostname$/nidp/saml2/sso",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IDP Hostname",
+                "helpText": "Provide the hostname of the Identity Provider. For eg- test.example.com or test.example.com:port",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "NetIQ",
+          "templateLabel": "NetIQ",
+          "image": "img/appIcons/netiq.jpg",
+          "description": "NetIQ IDP Connector Template"
+        },
+        {
+          "templateName": "Okta",
+          "templateLabel": "Okta",
+          "image": "img/appIcons/okta.jpg",
+          "description": "Okta IdP Connector Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "%{session.server.landinguri}",
+            "idpMatchingValue": "/*"
+          },
+          "idpConnector": {
+            "entityId": "http://www.okta.com/$orgExternalKey$",
+            "ssoBinding": "http-post",
+            "ssoUri": "$ssoURL$",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-post"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "orgExternalKey",
+                "displayLabel": "Org ExternalKey",
+                "type": "inputText",
+                "helpText": "Provide the Org external key from your application configuration in Okta under SAML Issuer ID and will have a format like http://www.okta.com/abcdaxyz",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId"
+                ]
+              },
+              {
+                "name": "ssoURL",
+                "displayLabel": "Single Sign-on(SSO) URL",
+                "type": "inputText",
+                "helpText": "Provide the single sign-on URL provided by Okta.",
+                "validator": [
+                   {
+                        "type": "url-validator"
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idpConnector": {
+            "entityId": "https://app.onelogin.com/saml/metadata/$connectorId$",
+            "signArtifactResolutionRq": false,
+            "singleLogoutUri": "https://$appName$.onelogin.com/trust/saml2/http-redirect/slo/$connectorId$",
+            "ssoBinding": "$ssoBinding$",
+            "ssoUri": "https://$appName$.onelogin.com/trust/saml2/$ssoBinding$/sso/$connectorId$",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "%{session.server.landinguri}",
+            "idpMatchingValue": "/*"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "connectorId",
+                "displayLabel": "Connector ID",
+                "helpText": "Provide the connector id from onelogin SSO URL. For eg - If the SSO URL is https://company.onelogin.com/trust/saml2/http-redirect/sso/123456, then 123456 is the connector id.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.ssoUri"
+                ]
+              },
+              {
+                "name": "ssoBinding",
+                "displayLabel": "Single Sign-on Service Binding",
+                "helpText": "Select the SSO binding",
+                "type": "dropdown",
+                "values": {
+                    "http-post": {
+                        "displayValue": "POST",
+                        "value": "http-post"
+                    },
+                    "http-redirect": {
+                        "displayValue": "Redirect",
+                        "value": "http-redirect"
+                    }
+                },
+                "targetProperties": [
+                    "idpConnector.ssoUri",
+                    "idpConnector.ssoBinding"
+                ]
+              },
+              {
+                "name": "appName",
+                "displayLabel": "Application Connector Name",
+                "helpText": "Provide the connector name from the onelogin SSO URL. For eg - If the SSO URL is https://company.onelogin.com/trust/saml2/http-redirect/sso/123456, then company is the application connector name.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri",
+                  "idpConnector.singleLogoutUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "onelogin",
+          "templateLabel": "onelogin",
+          "image": "img/appIcons/onelogin.jpg",
+          "description": "onelogin IDP Connector template"
+        },
+        {
+          "templateName": "Open SSO",
+          "templateLabel": "Open SSO",
+          "image": "img/appIcons/oracle.jpg",
+          "description": "Open SSO IdP Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "idpConnector": {
+            "entityId": "$protocol$://$idpHostname$/opensso",
+            "ssoBinding": "http-post",
+            "ssoUri": "$protocol$://$idpHostname$/opensso/SSO/metaAlias/idp",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "identityLocationAttribute": "",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-post",
+            "singleLogoutUri": "$protocol$://$idpHostname$/opensso/IDPSloPOST/metaAlias/idp",
+            "singleLogoutResponseUri": "$protocol$://$idpHostname$/opensso/IDPSloPOST/metaAlias/idp"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IdP Hostname",
+                "helpText": "Provide the hostname of your IDP",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.singleLogoutResponseUri"
+                ]
+              },
+              {
+                "name": "protocol",
+                "displayLabel": "Scheme",
+                "type": "dropdown",
+                "helpText": "Select the protocol.",
+                "values": {
+                    "https": {
+                        "displayValue": "https",
+                        "value": "https"
+                    },
+                    "http": {
+                        "displayValue": "http",
+                        "value": "http"
+                    }
+                },
+                "targetProperties": [
+                    "idpConnector.entityId",
+                    "idpConnector.ssoUri",
+                    "idpConnector.singleLogoutUri",
+                    "idpConnector.singleLogoutResponseUri"
+                ]
+               }
+            ]
+          }
+        },
+        {
+          "templateName": "Oracle Access Manager",
+          "templateLabel": "Oracle Access Manager",
+          "image": "img/appIcons/oracle.jpg",
+          "description": "Oracle Access Manager IdP Connector Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "idpConnector": {
+            "entityId": "https://$domainName$/oam/fed",
+            "ssoBinding": "http-post",
+            "ssoUri": "https://$domainName$/oamfed/idp/samlv20",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-post",
+            "singleLogoutResponseUri": "https://$domainName$/oamfed/idp/samlv20",
+            "singleLogoutUri": "https://$domainName$/oamfed/idp/samlv20",
+            "artifactResolutionServiceUrl": "https://$domainName$/oamfed/idp/soap"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "domainName",
+                "displayLabel": "Domain Name",
+                "type": "inputText",
+                "helpText": "Provide the domain name of your IDP from the SSO URL. For eg - If URI is https://example.test.com/oamfed/idp/samlv20, then domain name is example.test.com",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri",
+                  "idpConnector.singleLogoutResponseUri",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.artifactResolutionServiceUrl"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "templateName": "Ping Federate",
+          "templateLabel": "Ping Federate",
+          "image": "img/appIcons/ping.jpg",
+          "description": "Ping Federate IdP Connector Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "%{session.server.landinguri}",
+            "idpMatchingValue": "/*"
+          },
+          "idpConnector": {
+            "entityId": "$entityId$",
+            "ssoBinding": "http-post",
+            "ssoUri": "https://$idpHostname$/idp/SSO.saml2",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-post",
+            "singleLogoutResponseUri": "https://$idpHostname$/idp/SLO.saml2",
+            "singleLogoutUri": "https://$idpHostname$/idp/SLO.saml2"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "entityId",
+                "displayLabel": "IdP Entityid",
+                "type": "inputText",
+                "helpText": "Provide the entity ID.",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-\/]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), slash ( / ) or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId"
+                ]
+              },
+              {
+                "name": "idpHostname",
+                "displayLabel": "IdP Hostname",
+                "type": "inputText",
+                "helpText": "Provide the hostname of your Identity Provider. For eg- test.example.com or test.example.com:port",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.singleLogoutResponseUri"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "idpConnector": {
+            "entityId": "$entityId$",
+            "signArtifactResolutionRq": false,
+            "ssoBinding": "http-post",
+            "ssoUri": "https://sso.connect.pingidentity.com/sso/idp/SSO.saml2\\?idpid=$idpId$",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "entityId",
+                "displayLabel": "Entity Id",
+                "helpText": "Provide the entity id",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-\/]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), slash ( / ) or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId"
+                ]
+              },
+              {
+                "name": "idpId",
+                "displayLabel": "IdP ID",
+                "helpText": "Provide the IdP ID from the \\'Initiate Single Sign - on URL \\' in PingOne.For eg - https: //sso.connect.pingidentity.com/sso/idp/SSO.saml2?idpid=testIdp then testIdp is idpId",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "PingOne",
+          "templateLabel": "PingOne",
+          "image": "img/appIcons/ping.jpg",
+          "description": "PingOne IDP Connector template"
+        },
+        {
+          "idpConnector": {
+            "entityId": "https://$idpHostname$/dana-na/auth/saml-endpoint.cgi",
+            "signArtifactResolutionRq": false,
+            "ssoUri": "https://$idpHostname$/dana-na/auth/saml-sso.cgi",
+            "wantAuthnRequestSigned": true,
+            "ssoBinding": "http-post",
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "\"%{session.server.landinguri}\"",
+            "idpMatchingValue": "/"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IDP Hostname",
+                "helpText": "Provide the hostname of your Identity Provider. For eg- test.example.com or test.example.com:port",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "PulseSecure",
+          "templateLabel": "PulseSecure",
+          "image": "img/appIcons/pulsesecure.jpg",
+          "description": "Pulsesecure IDP Connector template"
+        },
+        {
+          "idpConnector": {
+            "entityId": "$entityId$",
+            "identityLocation": "subject",
+            "signArtifactResolutionRq": false,
+            "ssoBinding": "http-redirect",
+            "ssoUri": "$ssoURL$",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "%{session.server.landinguri}",
+            "idpMatchingValue": "/"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "entityId",
+                "displayLabel": "Entity ID (SAML Issuer)",
+                "helpText": "Provide the entity ID.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-\/]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), slash ( / ) or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId"
+                ]
+              },
+              {
+                "name": "ssoURL",
+                "displayLabel": "Single Sign-on Service URL",
+                "helpText": "Set the URL to the Fully Qualified Domain Name (FQDN) of the SecureAuth IdP appliance followed by the realm number of the integration and secureauth.aspx. For eg- https://secureauth.company.com/secureauth12/secureauth.aspx.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "url-validator"
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "SecureAuth",
+          "templateLabel": "SecureAuth",
+          "image": "img/appIcons/secureauth.jpg",
+          "description": "IDP Connector template for SecureAuth"
+        },
+        {
+          "templateName": "Shibboleth",
+          "templateLabel": "Shibboleth",
+          "image": "img/appIcons/shibboleth.jpg",
+          "description": "Shibboleth IdP Connector Template",
+          "documentLink": "",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "idpConnector": {
+            "artifactResolutionServiceUrl": "$protocol$://$idpHostname$/idp/profile/SAML2/SOAP/ArtifactResolution",
+            "entityId": "$protocol$://$idpHostname$/shibboleth",
+            "ssoBinding": "$binding$",
+            "ssoUri": "$protocol$://$idpHostname$/idp/profile/SAML2/SSO",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-post"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IdP Hostname",
+                "type": "inputText",
+                "helpText": "Provide your IDP hostname. For eg- test.example.com or test.example.com:port",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.ssoUri",
+                   "idpConnector.artifactResolutionServiceUrl"
+                ]
+              },
+             {
+                "name": "protocol",
+                "displayLabel": "Scheme",
+                "type": "dropdown",
+                "helpText": "Select http / https",
+                "values": {
+                    "http": {
+                        "displayValue": "http",
+                        "value": "http"
+                    },
+                    "https": {
+                        "displayValue": "https",
+                        "value": "https"
+                    }
+                },
+                "targetProperties":[
+                   "idpConnector.entityId",
+                   "idpConnector.ssoUri",
+                   "idpConnector.artifactResolutionServiceUrl"
+                ]
+              },
+              {
+                  "name": "binding",
+                  "displayLabel": "SSO Binding",
+                  "type": "dropdown",
+                  "helpText": "Select Redirect / Post",
+                  "values": {
+                    "http-post": {
+                      "displayValue": "POST",
+                      "value": "http-post",
+                      "targetProperties": [
+                        {
+                          "name": "idpConnector.ssoUri",
+                          "value": "$protocol$://$idpHostname$/idp/profile/SAML2/POST/SSO"
+                        },
+                        {
+                          "name": "idpConnector.ssoBinding",
+                          "value": "http-post"
+                        }
+                      ]
+                    },
+                    "http-redirect": {
+                      "displayValue": "Redirect",
+                      "value": "http-redirect",
+                      "targetProperties": [
+                        {
+                          "name": "idpConnector.ssoUri",
+                          "value": "$protocol$://$idpHostname$/idp/profile/SAML2/Redirect/SSO"
+                        },
+                        {
+                          "name": "idpConnector.ssoBinding",
+                          "value": "http-redirect"
+                        }
+                      ]
+                    }
+                    },
+                    "relatedVariable": [
+                      "protocol",
+                      "idpHostname"
+                    ]
+                }
+            ]
+          }
+        },
+        {
+          "idpConnector": {
+            "entityId": "http://$idpHostname$/simplesaml/saml2/idp/metadata.php",
+            "signArtifactResolutionRq": false,
+            "singleLogoutBinding": "http-redirect",
+            "singleLogoutUri": "http://$idpHostname$/simplesaml/saml2/idp/SingleLogoutService.php",
+            "ssoBinding": "http-redirect",
+            "ssoUri": "http://$idpHostname$/simplesaml/saml2/idp/SSOService.php",
+            "wantAuthnRequestSigned": false,
+            "wantDetachedSignature": false
+          },
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IDP Hostname or IP Address",
+                "helpText": "Provide the hostname or ipaddress:port of the IDP.",
+                "type": "inputText",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port or ipaddress:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.ssoUri"
+                ]
+              }
+            ]
+          },
+          "templateName": "SimpleSAMLPhp",
+          "templateLabel": "SimpleSAMLPhp",
+          "image": "img/appIcons/simplesamlphp.jpg",
+          "description": "SimpleSAMLPhp IDP connector template"
+        },
+        {
+          "templateName": "Vmware",
+          "templateLabel": "Vmware",
+          "image": "img/appIcons/vmware.jpg",
+          "description": "Vmware IdP Connector Template",
+          "idpConnectorBindingConfig": {
+            "idpMatchingSource": "",
+            "idpMatchingValue": ""
+          },
+          "idpConnector": {
+            "entityId": "https://$idpHostname$/SAAS/API/1.0/GET/metadata/idp.xml",
+            "ssoBinding": "http-redirect",
+            "ssoUri": "https://$idpHostname$/SAAS/auth/federation/sso",
+            "artifactResolutionServiceAddr": "$arsIpAddress$",
+            "artifactResolutionServicePort": "$arsPort$",
+            "artifactResolutionServiceUrl": "https://$idpHostname$/SAAS/auth/saml/artifact/resolve",
+            "signArtifactResolutionRq": false,
+            "identityLocation": "subject",
+            "wantAuthnRequestSigned": true,
+            "wantDetachedSignature": false,
+            "signatureType": "rsa-sha1",
+            "singleLogoutBinding": "http-redirect",
+            "singleLogoutUri": "https://$idpHostname$/SAAS/auth/logout",
+            "singleLogoutResponseUri": "https://$idpHostname$/SAAS/auth/logout"
+          },
+          "templatePropertyMetadata": {
+            "variables": [
+              {
+                "name": "idpHostname",
+                "displayLabel": "IdP Hostname",
+                "type": "inputText",
+                "helpText": "Provide the hostname of your Vmware Identity Manager. For eg- test.example.com or test.example.com:port",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.-]*:*[0-9]*$",
+                        "message": "Allowed pattern is test.example.com or test.example.com:port."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.entityId",
+                  "idpConnector.artifactResolutionServiceUrl",
+                  "idpConnector.ssoUri",
+                  "idpConnector.singleLogoutUri",
+                  "idpConnector.singleLogoutResponseUri"
+                ]
+              },
+              {
+                "name": "arsIpAddress",
+                "displayLabel": "Artifact Resolution Service IP Address",
+                "type": "inputText",
+                "helpText": "Provide the IP address of the Artifact Resolution Service",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9_.:-]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), underscore ( _ ), period ( . ), colon ( : ) or hyphen ( - )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.artifactResolutionServiceAddr"
+                ]
+              },
+              {
+                "name": "arsPort",
+                "displayLabel": "Artifact Resolution Service Port",
+                "type": "inputText",
+                "helpText": "Provide the port of the Artifact Resolution Service",
+                "validator": [
+                   {
+                        "type": "regex-validator",
+                        "pattern": "^[a-zA-Z0-9.]*$",
+                        "message": "Allowed characters are (a-z, A-Z), numbers (0-9), or period ( . )."
+                    }
+                ],
+                "targetProperties": [
+                  "idpConnector.artifactResolutionServicePort"
+                ]
+              }
+            ]
+          }
+        }
+]
