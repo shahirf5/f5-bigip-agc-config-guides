@@ -1,4 +1,6 @@
 sudo: required
+language:
+- python
 services:
 - docker
 # Pull container image from Docker Hub
@@ -13,7 +15,7 @@ script:
 deploy:
 - provider: script
   env:
-  - BUILD_HTML_DIR=build/html
+    - BUILD_HTML_DIR=build/html
   skip_cleanup: true
   on:
     branch: 2.0
