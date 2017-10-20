@@ -1,0 +1,24 @@
+sudo: required
+language:
+- python
+services:
+- docker
+# Pull container image from Docker Hub
+before_install:
+- docker pull f5devcentral/containthedocs
+# Skip requirements installation; packages are already in containthedocs
+install: true
+# Test docs build, grammar, and links
+script:
+- make docker-testdocs
+# Publish docs to clouddocs.f5.com/products/agc/v2.0
+deploy:
+- provider: script
+  env:
+    - BUILD_HTML_DIR=build/html
+  skip_cleanup: true
+  on:
+    branch: 2.0
+    repo: F5DevCentral/f5-bigip-agc-config-guides
+  script:
+  - ./scripts/deploy-docs.sh publish-product-docs-to-prod agc v2.0
