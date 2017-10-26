@@ -1,6 +1,6 @@
-=================================================================
+======================================================================================
 SaaS Application Configuration Guide : ATI Cloud
-=================================================================
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
@@ -17,7 +17,7 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
 ATI Cloud Configuration in AGC Workflow
-----------------------------------------------
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
@@ -36,7 +36,7 @@ SaaS Application Specific Properties
 ------------------------------------
 
 To configure ATI Cloud provide following inputs:
-	- **ATI Datacenter Site** : Specify ATI Datacenter Site which is used to setup the entityId, example https://<sso-asia.aticloud.aero>/sp
+	- **ATI Datacenter Site** : Specify ATI Datacenter Site which is used to setup the entityId, example https://datacenter_location/sp
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------

@@ -1,6 +1,6 @@
-=================================================================
+======================================================================================
 SaaS Application Configuration Guide : PILtools
-=================================================================
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
@@ -17,7 +17,7 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
 PILtools Configuration in AGC Workflow
-----------------------------------------------
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
@@ -36,7 +36,7 @@ SaaS Application Specific Properties
 ------------------------------------
 
 To configure PILtools provide following inputs:
-	- **Customer ID** : Specify Customer ID which is used to setup Entity ID, for example, https://stg.piltools.com/sso/<customerId>/
+	- **Customer ID** : Specify Customer ID which is used to setup Entity ID. For example, if your ACS is https://stg.piltools.com/sso/customerId/, then enter customerId
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------

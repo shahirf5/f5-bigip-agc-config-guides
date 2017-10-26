@@ -1,6 +1,6 @@
-=================================================================
+======================================================================================
 SaaS Application Configuration Guide : Mulesoft
-=================================================================
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
@@ -17,7 +17,7 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
 Mulesoft Configuration in AGC Workflow
-----------------------------------------------
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
@@ -36,7 +36,7 @@ SaaS Application Specific Properties
 ------------------------------------
 
 To configure Mulesoft provide following inputs:
-	- **Sub Domain** : Provide the sub domain of your organization. For eg - <Domain>.anypoint.mulesoft.com
+	- **Sub Domain** : Provide the sub domain of your organization. For example, if your entity ID is domain.anypoint.mulesoft.com, then enter domain
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------

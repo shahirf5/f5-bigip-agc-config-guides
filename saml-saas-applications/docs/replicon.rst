@@ -1,6 +1,6 @@
-=================================================================
+======================================================================================
 SaaS Application Configuration Guide : Replicon
-=================================================================
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
@@ -17,7 +17,7 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
 Replicon Configuration in AGC Workflow
-----------------------------------------------
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
@@ -36,7 +36,7 @@ SaaS Application Specific Properties
 ------------------------------------
 
 To configure Replicon provide following inputs:
-	- **Company Key** : Specify a Company Key which is used to setup entityId, example: https://global.replicon.com/!/saml2/<companyKey>
+	- **Company Key** : Specify a Company Key which is used to setup Entity ID and ACS URL. For example, if your ACS URL is: https://global.replicon.com/!/saml2/companyKey, then enter companyKey
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------

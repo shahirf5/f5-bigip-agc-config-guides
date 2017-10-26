@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : boom.com
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : boomi.com
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure boom.com:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure boomi.com:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-boom.com Configuration in AGC Workflow
-----------------------------------------------
+boomi.com Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-boom.com, select
-boom.com and click on **Add** button
+boomi.com, select
+boomi.com and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,7 +35,7 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure boom.com provide following inputs:
+To configure boomi.com provide following inputs:
 	- **Company ID** : Provide the company ID. If your SSO URL is https://platform.boomi.com/sso/testCompany/saml, testCompany is the company ID
 
 Additional SAML Attributes and ACS Properties
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for boom.com and export SAML Metadata.
+#. Identify the Saml SSO object created for for boomi.com and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in boom.com service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in boomi.com service.
 
 Test the Configuration
 ---------------------------------
