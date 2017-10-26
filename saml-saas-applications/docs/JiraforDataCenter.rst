@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Silkroad Redcarpet
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Atlassian Jira Enterprise
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Silkroad Redcarpet:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Atlassian Jira Enterprise:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Silkroad Redcarpet Configuration in AGC Workflow
-----------------------------------------------
+Atlassian Jira Enterprise Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Silkroad Redcarpet, select
-Silkroad Redcarpet and click on **Add** button
+Atlassian Jira Enterprise, select
+Atlassian Jira Enterprise and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,9 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Silkroad Redcarpet provide following inputs:
-	- **Sub Domain** : If the SSO URL is https://company.silkroad.com/Authentication/, sub domain is company
+To configure Atlassian Jira Enterprise provide following inputs:
+	- **Assertion Consumer Service URL** : Provide the Assertion Consumer Service URL
+	- **Entity ID** : Provide the entity ID.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +55,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Silkroad Redcarpet and export SAML Metadata.
+#. Identify the Saml SSO object created for for Atlassian Jira Enterprise and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Silkroad Redcarpet service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Atlassian Jira Enterprise service.
 
 Test the Configuration
 ---------------------------------

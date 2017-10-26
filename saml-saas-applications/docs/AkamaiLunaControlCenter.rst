@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : GitHub Enterprise
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Akamai Luna Control Center
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure GitHub Enterprise:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Akamai Luna Control Center:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-GitHub Enterprise Configuration in AGC Workflow
-----------------------------------------------
+Akamai Luna Control Center Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-GitHub Enterprise, select
-GitHub Enterprise and click on **Add** button
+Akamai Luna Control Center, select
+Akamai Luna Control Center and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,8 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure GitHub Enterprise provide following inputs:
-	- **Hostname** : Provide only the hostname where GitHub Enterprise is hosted. For eg - test.github.com.
+To configure Akamai Luna Control Center provide following inputs:
+	- **Company Sub Somain** : Provide your company sub domain. For eg if your SSO URL is https://company.luna-sp.com/sso/endpoint/postResponse then sub domain is company.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for GitHub Enterprise and export SAML Metadata.
+#. Identify the Saml SSO object created for for Akamai Luna Control Center and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in GitHub Enterprise service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Akamai Luna Control Center service.
 
 Test the Configuration
 ---------------------------------

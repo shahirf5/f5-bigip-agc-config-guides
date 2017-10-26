@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Ariba Sourcing
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Aerohive IDManager
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Ariba Sourcing:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Aerohive IDManager:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Ariba Sourcing Configuration in AGC Workflow
-----------------------------------------------
+Aerohive IDManager Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Ariba Sourcing, select
-Ariba Sourcing and click on **Add** button
+Aerohive IDManager, select
+Aerohive IDManager and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,8 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Ariba Sourcing provide following inputs:
-	- **Sub Domain** : Provide the sub domain from your ACS URL. If the ACS URL is https://s1.ariba.com/Sourcing/Main/ad/samlAuth/SSOActions?realm=company, then company is the sub domain
+To configure Aerohive IDManager provide following inputs:
+	- **Account ID** : Provide the account ID from the callback URL. For eg, if the callback URL is https://idmanager.aerohive.com/idmanager/register/saml/callback/123456, then the account id is 123456
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Ariba Sourcing and export SAML Metadata.
+#. Identify the Saml SSO object created for for Aerohive IDManager and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Ariba Sourcing service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Aerohive IDManager service.
 
 Test the Configuration
 ---------------------------------

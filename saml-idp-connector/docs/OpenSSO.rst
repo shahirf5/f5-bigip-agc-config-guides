@@ -1,8 +1,10 @@
-===============================
-BIG-IP as SAML SP Configuration
-===============================
+========================================================================
+IdP Connector Configuration Guide : Open SSO
+========================================================================
 
-This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow.
+BIG-IP as SAML SP Configuration
+-------------------------------
+This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow. Follow the steps below to configure Open SSO:
 
 #. Logon to BIG-IP using UI and click on Access -> Guided Configuration
 #. Select Federation category of use case configuration
@@ -17,15 +19,16 @@ External IDP Connector Configuration in AGC workflow
 
 (Note - Only one  IDP Connector can be configured for a Service Provider.)
 
-Under the External Identity Provider Connector Settings, first Select **Template**  option for the method to configure your IDP connector. Then choose an Identity Provider from the provided set. Search for Google Suite in the Search bar. (If you cannot find an Identity Provider which you are looking for in the set, then you can use the other options like "Metadata"  or "Custom"  and proceed with the configuration.)
+Under the External Identity Provider Connector Settings, first Select **Template**  option for the method to configure your IDP connector. Then choose an Identity Provider from the provided set. Search for Open SSO in the Search bar. (If you cannot find an Identity Provider which you are looking for in the set, then you can use the other options like "Metadata"  or "Custom"  and proceed with the configuration.)
 
-Select Google Suite and click Add button. Enter a name for the connector.
+Select Open SSO and click Add button. Enter a name for the connector.
 
 IDP Connector Specific Properties
 ---------------------------------
 
-To configure Google Suite provide following inputs:
-	- **IDP Identifier** : Provide the IDP identifier from the Google SSO URL. For eg - If SSO URL is https://accounts.google.com/o/saml2?idpid=abcdefg, then the IDP id is abcdefg
+To configure Open SSO provide following inputs:
+	- **IdP Hostname** : Provide the hostname of your IDP
+	- **Scheme** : Select the protocol.
 
 Advanced Connector Settings
 ---------------------------
@@ -57,8 +60,8 @@ Click **Save & Next**. Complete the subsequent steps and then deploy the configu
 Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, identify the SAML SP object created by your workflow, select it and click Export Metadata. This is the SAML metadata file which can be used to configure the Service Provider configuraton in the external Identity Provider Administration console.
 
 
-Setup Google Suite as Identity Provider
--------------------------------------------
+Setup Open SSO as Identity Provider
+-------------------------------------------------------------
 
 
 Testing your configuration

@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Aerohive IDManager
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : GitHub Enterprise
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Aerohive IDManager:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure GitHub Enterprise:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Aerohive IDManager Configuration in AGC Workflow
-----------------------------------------------
+GitHub Enterprise Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Aerohive IDManager, select
-Aerohive IDManager and click on **Add** button
+GitHub Enterprise, select
+GitHub Enterprise and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,8 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Aerohive IDManager provide following inputs:
-	- **Account ID** : Provide the account ID from the callback URL. For eg, if the callback URL is https://idmanager.aerohive.com/idmanager/register/saml/callback/123456, then the account id is 123456
+To configure GitHub Enterprise provide following inputs:
+	- **Hostname** : Provide only the hostname where GitHub Enterprise is hosted. For eg - test.github.com.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Aerohive IDManager and export SAML Metadata.
+#. Identify the Saml SSO object created for for GitHub Enterprise and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Aerohive IDManager service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in GitHub Enterprise service.
 
 Test the Configuration
 ---------------------------------

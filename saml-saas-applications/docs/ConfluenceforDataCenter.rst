@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Akamai Luna Control Center
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Atlassian Confluence Enterprise
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Akamai Luna Control Center:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Atlassian Confluence Enterprise:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Akamai Luna Control Center Configuration in AGC Workflow
-----------------------------------------------
+Atlassian Confluence Enterprise Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Akamai Luna Control Center, select
-Akamai Luna Control Center and click on **Add** button
+Atlassian Confluence Enterprise, select
+Atlassian Confluence Enterprise and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,8 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Akamai Luna Control Center provide following inputs:
-	- **Company Sub Somain** : Provide your company sub domain. For eg if your SSO URL is https://company.luna-sp.com/sso/endpoint/postResponse then sub domain is company.
+To configure Atlassian Confluence Enterprise provide following inputs:
+	- **Entity ID** : Provide the entity ID.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Akamai Luna Control Center and export SAML Metadata.
+#. Identify the Saml SSO object created for for Atlassian Confluence Enterprise and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Akamai Luna Control Center service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Atlassian Confluence Enterprise service.
 
 Test the Configuration
 ---------------------------------

@@ -1,6 +1,6 @@
-=================================================================
+======================================================================================
 SaaS Application Configuration Guide : securitymentor
-=================================================================
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
@@ -17,7 +17,7 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
 securitymentor Configuration in AGC Workflow
-----------------------------------------------
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
@@ -36,7 +36,7 @@ SaaS Application Specific Properties
 ------------------------------------
 
 To configure securitymentor provide following inputs:
-	- **Organization ID** : Provide the organization ID.  For eg - If ACS URL is https://www.securitymentor.com/simplesaml/module.php/saml/sp/saml2-acs.php/company, then orgId is company.
+	- **Organization ID** : Provide the organization ID. For eg - If ACS URL is https://www.securitymentor.com/simplesaml/module.php/saml/sp/saml2-acs.php/company, then orgId is company.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------

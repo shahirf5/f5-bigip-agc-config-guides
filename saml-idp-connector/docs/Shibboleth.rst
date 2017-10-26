@@ -1,8 +1,10 @@
-===============================
-BIG-IP as SAML SP Configuration
-===============================
+========================================================================
+IdP Connector Configuration Guide : Shibboleth
+========================================================================
 
-This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow.
+BIG-IP as SAML SP Configuration
+-------------------------------
+This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow. Follow the steps below to configure Shibboleth:
 
 #. Logon to BIG-IP using UI and click on Access -> Guided Configuration
 #. Select Federation category of use case configuration
@@ -60,7 +62,7 @@ Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, id
 
 
 Setup Shibboleth as Identity Provider
--------------------------------------------
+-------------------------------------------------------------
 
 
 Testing your configuration

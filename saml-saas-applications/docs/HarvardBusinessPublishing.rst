@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Sumo Logic
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Harvard Business Publishing
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Sumo Logic:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Harvard Business Publishing:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Sumo Logic Configuration in AGC Workflow
-----------------------------------------------
+Harvard Business Publishing Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Sumo Logic, select
-Sumo Logic and click on **Add** button
+Harvard Business Publishing, select
+Harvard Business Publishing and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,7 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Sumo Logic provide following inputs:
-	- **Configuration ID** : Provide the Sumo Logic Configuration ID from the authentication request URL provided by Sumo Logic.
+Harvard Business Publishing does not require any user input.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +53,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Sumo Logic and export SAML Metadata.
+#. Identify the Saml SSO object created for for Harvard Business Publishing and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Sumo Logic service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Harvard Business Publishing service.
 
 Test the Configuration
 ---------------------------------

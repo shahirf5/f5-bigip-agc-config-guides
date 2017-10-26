@@ -1,8 +1,10 @@
-===============================
-BIG-IP as SAML SP Configuration
-===============================
+========================================================================
+IdP Connector Configuration Guide : Vmware
+========================================================================
 
-This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow.
+BIG-IP as SAML SP Configuration
+-------------------------------
+This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow. Follow the steps below to configure Vmware:
 
 #. Logon to BIG-IP using UI and click on Access -> Guided Configuration
 #. Select Federation category of use case configuration
@@ -26,8 +28,6 @@ IDP Connector Specific Properties
 
 To configure Vmware provide following inputs:
 	- **IdP Hostname** : Provide the hostname of your Vmware Identity Manager. For eg- test.example.com or test.example.com:port
-	- **Artifact Resolution Service IP Address** : Provide the IP address of the Artifact Resolution Service
-	- **Artifact Resolution Service Port** : Provide the port of the Artifact Resolution Service
 
 Advanced Connector Settings
 ---------------------------
@@ -60,7 +60,7 @@ Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, id
 
 
 Setup Vmware as Identity Provider
--------------------------------------------
+-------------------------------------------------------------
 
 
 Testing your configuration

@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Adobe Sign (formerly Echosign)
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Oracle Hyperion
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Adobe Sign (formerly Echosign):
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Oracle Hyperion:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Adobe Sign (formerly Echosign) Configuration in AGC Workflow
-----------------------------------------------
+Oracle Hyperion Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Adobe Sign (formerly Echosign), select
-Adobe Sign (formerly Echosign) and click on **Add** button
+Oracle Hyperion, select
+Oracle Hyperion and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,9 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Adobe Sign (formerly Echosign) provide following inputs:
-	- **Hostname** : Provide the hostname configured in Adobe Sign. You can obtain this from the ACS URL. For eg - If ACS URL is https://company.na1.echosign.com/public/samlConsume then the hostname is company.
+To configure Oracle Hyperion provide following inputs:
+	- **Server URL** : Provide the server URL from. For eg - https://login.em2.oraclecloud.com.
+	- **Tenant ID** : Provide the tenant id from the Oracle Hyperion configuration
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +55,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Adobe Sign (formerly Echosign) and export SAML Metadata.
+#. Identify the Saml SSO object created for for Oracle Hyperion and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Adobe Sign (formerly Echosign) service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Oracle Hyperion service.
 
 Test the Configuration
 ---------------------------------

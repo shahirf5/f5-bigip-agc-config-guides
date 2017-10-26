@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Silkroad Recruiting
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Compliance360
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Silkroad Recruiting:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Compliance360:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Silkroad Recruiting Configuration in AGC Workflow
-----------------------------------------------
+Compliance360 Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Silkroad Recruiting, select
-Silkroad Recruiting and click on **Add** button
+Compliance360, select
+Compliance360 and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,8 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Silkroad Recruiting provide following inputs:
-	- **Domain Name** : From the SSO URL https://company.auth.silkroad.com/adfs/ls/ , domain is company.auth.silkroad.com
+To configure Compliance360 provide following inputs:
+	- **Organization ID** : Provide your Organization ID used for login to Compliance360
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Silkroad Recruiting and export SAML Metadata.
+#. Identify the Saml SSO object created for for Compliance360 and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Silkroad Recruiting service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Compliance360 service.
 
 Test the Configuration
 ---------------------------------

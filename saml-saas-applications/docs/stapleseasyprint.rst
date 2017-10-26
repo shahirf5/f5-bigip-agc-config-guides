@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Satples Easy Print
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Staples Easy Print
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Satples Easy Print:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Staples Easy Print:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Satples Easy Print Configuration in AGC Workflow
-----------------------------------------------
+Staples Easy Print Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Satples Easy Print, select
-Satples Easy Print and click on **Add** button
+Staples Easy Print, select
+Staples Easy Print and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,7 +35,7 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Satples Easy Print provide following inputs:
+To configure Staples Easy Print provide following inputs:
 	- **Sub Domain** : Specify Sub Domain. If your ACS URL or entity ID is http://acme.stapleseasyprint.com/Order/SAML2, then enter acme for Sub Domain.
 
 Additional SAML Attributes and ACS Properties
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Satples Easy Print and export SAML Metadata.
+#. Identify the Saml SSO object created for for Staples Easy Print and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Satples Easy Print service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Staples Easy Print service.
 
 Test the Configuration
 ---------------------------------

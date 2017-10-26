@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Navex Global
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Cornerstone on-demand
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Navex Global:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Cornerstone on-demand:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Navex Global Configuration in AGC Workflow
-----------------------------------------------
+Cornerstone on-demand Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Navex Global, select
-Navex Global and click on **Add** button
+Cornerstone on-demand, select
+Cornerstone on-demand and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,8 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Navex Global provide following inputs:
-	- **Partition Name** : Provide your partition name registered with Navex.
+To configure Cornerstone on-demand provide following inputs:
+	- **Sub Domain** : From the SSO URL like https://company.csod.com, sub Domain is company
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +54,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Navex Global and export SAML Metadata.
+#. Identify the Saml SSO object created for for Cornerstone on-demand and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Navex Global service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Cornerstone on-demand service.
 
 Test the Configuration
 ---------------------------------

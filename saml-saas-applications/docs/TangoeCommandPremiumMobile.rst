@@ -1,10 +1,10 @@
-=================================================================
-SaaS Application Configuration Guide : Oracle CRM onDemand
-=================================================================
+======================================================================================
+SaaS Application Configuration Guide : Tangoe
+======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Oracle CRM onDemand:
+This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Tangoe:
 
 #. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
 #. Select **Federation** category of use case configuration
@@ -16,13 +16,13 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Authentication method to use for SAML Identity Provider
 #. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
-Oracle CRM onDemand Configuration in AGC Workflow
-----------------------------------------------
+Tangoe Configuration in AGC Workflow
+---------------------------------------------------------------------------
 
 The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
 For example to configure
-Oracle CRM onDemand, select
-Oracle CRM onDemand and click on **Add** button
+Tangoe, select
+Tangoe and click on **Add** button
 
 Common SaaS Application Properties
 ----------------------------------
@@ -35,8 +35,7 @@ Common SaaS Application Properties
 SaaS Application Specific Properties
 ------------------------------------
 
-To configure Oracle CRM onDemand provide following inputs:
-	- **Sub Domain** : Provide sub domain name For. eg - In https://my333036-sso.crm.ondemand.com, my333036-sso is the sub domain name
+Tangoe does not require any user input.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,9 +53,9 @@ Security Properties
 Deploy the Configuration
 ------------------------
 #. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for Oracle CRM onDemand and export SAML Metadata.
+#. Identify the Saml SSO object created for for Tangoe and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Oracle CRM onDemand service.
+You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in Tangoe service.
 
 Test the Configuration
 ---------------------------------
