@@ -11,10 +11,10 @@ This document describes configuration steps for configuring an AGC SAML Identity
 #. Choose **SAML Identity Provider for SaaS Application** for configuring BIG-IP as SAML Identity Provider
 #. Review **Required Configuration** and complete the following workflow steps before configuring the SaaS Application
 
-#. Identity Provider
-#. Virtual Server
-#. Authentication method to use for SAML Identity Provider
-#. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
+- Identity Provider
+- Virtual Server
+- Authentication method to use for SAML Identity Provider
+- After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
 
 EdX Configuration in AGC Workflow
 ---------------------------------------------------------------------------

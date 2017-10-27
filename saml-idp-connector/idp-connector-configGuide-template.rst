@@ -10,9 +10,10 @@ This document describes the configuration steps for configuring an external IDP 
 #. Select Federation category of use case configuration
 #. Choose SAML Service Provider for configuration BIG-IP as SAML Service Provider.
 #. Review Required Configuration and complete steps to configure before configuring the External IDP Connector.
-    #. Service Provider.
-    #. Virtual Server.
-    #. After completing the External IDP connector, complete the Pool Settings and the optional Endpoint and SSO settings.
+
+    - Service Provider.
+    - Virtual Server.
+    - After completing the External IDP connector, complete the Pool Settings and the optional Endpoint and SSO settings.
 
 External IDP Connector Configuration in AGC workflow
 ----------------------------------------------------
