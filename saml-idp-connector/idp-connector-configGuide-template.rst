@@ -18,7 +18,7 @@ This document describes the configuration steps for configuring an external IDP 
 External IDP Connector Configuration in AGC workflow
 ----------------------------------------------------
 
-(Note - Only one  IDP Connector can be configured for a Service Provider.)
+(Note - Saml SP configuration supports configuration of only one  IDP Connector for a Service Provider.)
 
 Under the External Identity Provider Connector Settings, first Select **Template**  option for the method to configure your IDP connector. Then choose an Identity Provider from the provided set. Search for $TEMPLATE_LABEL$ in the Search bar. (If you cannot find an Identity Provider which you are looking for in the set, then you can use the other options like "Metadata"  or "Custom"  and proceed with the configuration.)
 
@@ -47,7 +47,7 @@ Assertion Settings
 Security Settings
 ~~~~~~~~~~~~~~~~~
 
-    Select **Yes**  if you need the Authentication to be signed and select the appropriate signing algorithm.
+    Select **Yes**  To sign Authentication request and select the appropriate signing algorithm.
 
 Certificate Settings
 ~~~~~~~~~~~~~~~~~~~~
@@ -56,8 +56,7 @@ Certificate Settings
 
 Click **Save & Next**. Complete the subsequent steps and then deploy the configuration.
 
-Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, identify the SAML SP object created by your workflow, select it and click Export Metadata. This is the SAML metadata file which can be used to configure the Service Provider configuraton in the external Identity Provider Administration console.
-
+Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, identify the SAML SP object created by your workflow, select it and click Export Metadata. Use this SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console
 
 Setup $TEMPLATE_LABEL$ as Identity Provider
 -------------------------------------------------------------
