@@ -85,6 +85,8 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+# ignore URL checks
+linkcheck_ignore=[r'((https?):((//)|(\\\\))+[\w\d:#@%/;$()~_?\+-=\\\.&]*)']
 
 # -- Options for HTML output ----------------------------------------------
 
