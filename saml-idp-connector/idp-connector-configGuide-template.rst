@@ -11,9 +11,9 @@ This document describes the configuration for an external IDP Connector using an
 #. Select the **SAML Service Provider** to configure BIG-IP as a SAML Service Provider.
 #. Review the Required Configuration information and complete the following steps, which are required before you configure the External IDP Connector.
 
-    - Service Provider.
-    - Virtual Server.
-    - Also, after you configure the External IDP connector, configure Pool Settings and the optional Endpoint and SSO settings.
+    - Provide the **Service Provider** details.
+    - Provide the **Virtual Server** configuration details.
+    - After you configure the External IDP connector, configure the Pool Settings and (optional) Endpoint Check and SSO settings.
 
 External IDP Connector Configuration in Guided Configuration
 ------------------------------------------------------------
@@ -55,16 +55,22 @@ Certificate Settings
 
     Select **Yes**  if you want to detach the signature when using the redirect binding.
 
-Click **Save & Next**. Complete the subsequent steps and then deploy the configuration.
+Click **Save & Next**. Complete the subsequent steps. 
 
-To retrieve the metadata for this configuration, navigate to **Access -> Federation -> SAML Service Provider -> Local SP Services**. Select the SAML SP object created by your workflow, and click Export Metadata. Use the SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console.
+Deploy the Configuration
+------------------------
+
+#. Deploy the configuration from the **Summary** screen.
+#. To retrieve the metadata for this configuration, navigate to **Access -> Federation -> SAML Service Provider -> Local SP Services**.
+#. Select the SAML SP object created by your workflow, and click **Export Metadata**. 
+#. Use the SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console.
 
 Setup $TEMPLATE_LABEL$ as Identity Provider
 -------------------------------------------------------------
 
 
-Testing your configuration
---------------------------
+Test the configuration
+----------------------
 
-#. To test the configuration, click on the *Click to test configuration* link on the AGC Summary page.
+#. To test the configuration, click on the link *Click to test configuration* link on the Summary page.
 #. Provide test user credentials, and verify that the access to the backend application succeeds.
