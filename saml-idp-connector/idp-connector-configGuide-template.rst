@@ -9,7 +9,7 @@ This document describes the configuration for an external IDP Connector using an
 #. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**.
 #. Select the **Federation** category.
 #. Select the **SAML Service Provider** to configure BIG-IP as a SAML Service Provider.
-#. Review the Required Configuration information and complete the following steps, which are required before you configure the External IDP Connector.
+#. Review the Required Configuration information and complete the following required steps before you configure the External IDP Connector.
 
     - Provide the **Service Provider** details.
     - Provide the **Virtual Server** configuration details.

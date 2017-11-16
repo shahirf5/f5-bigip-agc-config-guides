@@ -9,7 +9,7 @@ This document describes the configuration for a SAML Identity Provider for SaaS 
 #. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**
 #. Select the **Federation** category.
 #. Select **SAML Identity Provider for SaaS Application** to configure BIG-IP as a SAML Identity Provider.
-#. Review the Required Configuration information, and complete the following steps, which are required before you configure the SaaS Application.
+#. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
    - Provide the **Identity Provider** details.
    - Provide the **Virtual Server** configuration details.
@@ -17,7 +17,7 @@ This document describes the configuration for a SAML Identity Provider for SaaS 
    - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
 $TEMPLATE_LABEL$ Configuration in Guided Configuration Workflow
----------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 
 The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click **Add**.
 
@@ -39,7 +39,7 @@ $APP_PROPERTIES$
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
 
-#. Configure any additional attribute values which must be sent in the SAML assertion to SaaS Application. Each SAML Attribute has an attribute name and attribute value. The attribute value field can be specified using session variables. Configure an AD or LDAP query to include specific attributes in session variables.
+#. Configure any additional attribute values to include in the SAML assertion to SaaS Application. Each SAML Attribute has an attribute name and attribute value. The session variable values can specify attribute values. Configure an AD or LDAP query to include specific attributes in session variables.
 #. Configure an additional Assertion Consumer Service URI if the application requires such a URI.
 
 Security Properties

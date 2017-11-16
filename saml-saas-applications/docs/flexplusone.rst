@@ -1,10 +1,10 @@
 ======================================================================================
-SaaS Application Configuration Guide : SAP Successfactors
+SaaS Application Configuration Guide : Flex PlusOne
 ======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure SAP Successfactors:
+This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Flex PlusOne:
 
 #. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**
 #. Select the **Federation** category.
@@ -16,12 +16,12 @@ This document describes the configuration for a SAML Identity Provider for SaaS 
 - Configured the **Authentication** method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
-SAP Successfactors Configuration in Guided Configuration Workflow
+Flex PlusOne Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
 The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click **Add**.
 
-For example, to configure SAP Successfactors, select SAP Successfactors and click **Add**.
+For example, to configure Flex PlusOne, select Flex PlusOne and click **Add**.
 
 Common Application Properties
 -----------------------------
@@ -34,9 +34,7 @@ Common Application Properties
 Application Specific Properties
 -------------------------------
 
-To configure SAP Successfactors provide following inputs:
-	- **Company ID** : Provide the company ID from the SSO URL. For eg- If the SSO URL is https://test.company.com/saml2/SAMLAssertionConsumer?company=testcompany, then company Id is testcompany.
-	- **Domain Name** : Provide the domain name from the SSO URL. For eg- If the SSO URL is https://test.company.com/saml2/SAMLAssertionConsumer?company=testcompany, then domain name is test.company.com.
+Flex PlusOne does not require any user input.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -56,8 +54,8 @@ Deploy the Configuration
 
 #. Deploy the configuration from the **Summary** screen.
 #. To retrieve the metadata for this configuration, navigate to **Access -> Federation -> Saml Identity Provider -> Local Idp Services**.
-#. Select the SAML SSO object created for for SAP Successfactors, and click **Export Metadata**.
-#. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the SAP Successfactors service.
+#. Select the SAML SSO object created for for Flex PlusOne, and click **Export Metadata**.
+#. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the Flex PlusOne service.
 
 Test the Configuration
 ----------------------

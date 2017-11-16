@@ -1,10 +1,10 @@
 ========================================================================
-IdP Connector Configuration Guide : CA
+IdP Connector Configuration Guide : Microsoft ADFS
 ========================================================================
 
 BIG-IP as SAML SP Configuration
 -------------------------------
-This document describes the configuration for an external IDP Connector using an IDP Connector template in the Guided Configuration SAML Service Provider workflow. Follow the steps below to configure CA:
+This document describes the configuration for an external IDP Connector using an IDP Connector template in the Guided Configuration SAML Service Provider workflow. Follow the steps below to configure Microsoft ADFS:
 
 #. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**.
 #. Select the **Federation** category.
@@ -21,15 +21,17 @@ External IDP Connector Configuration in Guided Configuration
 .. note::  Saml SP configuration supports only one IDP Connector for a Service Provider.
 
 #. On the External Identity Provider Connector Settings screen, select the **Template**  method.
-#. Select the Identity Provider from the provided set. You can search for CA in the Search bar. If a template for your application is not available, you can use the options *Metadata* or *Custom*, and configure the Identity Providers accordingly.
+#. Select the Identity Provider from the provided set. You can search for Microsoft ADFS in the Search bar. If a template for your application is not available, you can use the options *Metadata* or *Custom*, and configure the Identity Providers accordingly.
 
-Select CA and click **Add**. Specify a name for the connector.
+Select Microsoft ADFS and click **Add**. Specify a name for the connector.
 
 IDP Connector Specific Properties
 ---------------------------------
 
-To configure CA provide following inputs:
-	- **IDP Hostname** : Provide the hostname of your Identity Provider. For eg- test.example.com or test.example.com:port
+To configure Microsoft ADFS provide following inputs:
+	- **IdP Hostname** : Provide the hostname of your Identity Provider. For example, test.example.com or test.example.com:port.
+	- **Entity ID Scheme** : Select the protocol for Entity ID.
+	- **Scheme** : Select the protocol. If the scheme is https, then configure Server SSL Profile.
 
 Advanced Connector Settings
 ---------------------------
@@ -66,7 +68,7 @@ Deploy the Configuration
 #. Select the SAML SP object created by your workflow, and click **Export Metadata**.
 #. Use the SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console.
 
-Setup CA as Identity Provider
+Setup Microsoft ADFS as Identity Provider
 -------------------------------------------------------------
 
 
