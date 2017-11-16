@@ -4,25 +4,26 @@ IdP Connector Configuration Guide : $TEMPLATE_LABEL$
 
 BIG-IP as SAML SP Configuration
 -------------------------------
-This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow. Follow the steps below to configure $TEMPLATE_LABEL$:
+This document describes the configuration for an external IDP Connector using an IDP Connector template in the Guided Configuration SAML Service Provider workflow. Follow the steps below to configure $TEMPLATE_LABEL$:
 
-#. Logon to BIG-IP using UI and click on Access -> Guided Configuration
-#. Select Federation category of use case configuration
-#. Choose SAML Service Provider for configuration BIG-IP as SAML Service Provider.
-#. Review Required Configuration and complete steps to configure before configuring the External IDP Connector.
+#. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**.
+#. Select the **Federation** category.
+#. Select the **SAML Service Provider** to configure BIG-IP as a SAML Service Provider.
+#. Review the Required Configuration information and complete the following steps, which are required before you configure the External IDP Connector.
 
-    - Service Provider.
-    - Virtual Server.
-    - After completing the External IDP connector, complete the Pool Settings and the optional Endpoint and SSO settings.
+    - Provide the **Service Provider** details.
+    - Provide the **Virtual Server** configuration details.
+    - After you configure the External IDP connector, configure the Pool Settings and (optional) Endpoint Check and SSO settings.
 
-External IDP Connector Configuration in AGC workflow
-----------------------------------------------------
+External IDP Connector Configuration in Guided Configuration
+------------------------------------------------------------
 
-(Note - Saml SP configuration supports configuration of only one  IDP Connector for a Service Provider.)
+.. note::  Saml SP configuration supports only one IDP Connector for a Service Provider.
 
-Under the External Identity Provider Connector Settings, first Select **Template**  option for the method to configure your IDP connector. Then choose an Identity Provider from the provided set. Search for $TEMPLATE_LABEL$ in the Search bar. (If you cannot find an Identity Provider which you are looking for in the set, then you can use the other options like "Metadata"  or "Custom"  and proceed with the configuration.)
+#. On the External Identity Provider Connector Settings screen, select the **Template**  method. 
+#. Select the Identity Provider from the provided set. You can search for $TEMPLATE_LABEL$ in the Search bar. If a template for your application is not available, you can use the options *Metadata* or *Custom*, and configure the Identity Providers accordingly.
 
-Select $TEMPLATE_LABEL$ and click Add button. Enter a name for the connector.
+Select $TEMPLATE_LABEL$ and click **Add**. Specify a name for the connector.
 
 IDP Connector Specific Properties
 ---------------------------------
@@ -32,7 +33,7 @@ $APP_PROPERTIES$
 Advanced Connector Settings
 ---------------------------
 
-If the default basic settings do not work for you, you can go to Advanced Settings by clicking on **Show Advanced Settings**.
+If the basic settings do not provide the information you need to configure, show Advanced Settings by clicking **Show Advanced Settings**.
 
 Endpoint Settings
 ~~~~~~~~~~~~~~~~~
@@ -42,28 +43,34 @@ Endpoint Settings
 Assertion Settings
 ~~~~~~~~~~~~~~~~~~
 
-    Specify the Identity Location whether it is **Subject** or **Attribute**.
+    Specify whether the Identity Location is **Subject** or **Attribute**.
 
 Security Settings
 ~~~~~~~~~~~~~~~~~
 
-    Select **Yes**  To sign Authentication request and select the appropriate signing algorithm.
+    Select **Yes** to sign Authentication requests, and select the appropriate signing algorithm.
 
 Certificate Settings
 ~~~~~~~~~~~~~~~~~~~~
 
-    Select **Yes**  if you want to detach signature when using the redirect binding.
+    Select **Yes**  if you want to detach the signature when using the redirect binding.
 
-Click **Save & Next**. Complete the subsequent steps and then deploy the configuration.
+Click **Save & Next**. Complete the subsequent steps. 
 
-Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, identify the SAML SP object created by your workflow, select it and click Export Metadata. Use this SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console
+Deploy the Configuration
+------------------------
+
+#. Deploy the configuration from the **Summary** screen.
+#. To retrieve the metadata for this configuration, navigate to **Access -> Federation -> SAML Service Provider -> Local SP Services**.
+#. Select the SAML SP object created by your workflow, and click **Export Metadata**. 
+#. Use the SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console.
 
 Setup $TEMPLATE_LABEL$ as Identity Provider
 -------------------------------------------------------------
 
 
-Testing your configuration
---------------------------
+Test the configuration
+----------------------
 
-#. To test the configuration, click on the "Click to test configuration" link on the AGC Summary page.
-#. Provide the test user's credentials and verify if the access to backend application succeeds.
+#. To test the configuration, click on the link *Click to test configuration* link on the Summary page.
+#. Provide test user credentials, and verify that the access to the backend application succeeds.

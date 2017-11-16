@@ -45,6 +45,8 @@ Note: If you don't use the Docker container, you need to install the project dep
 ```
 virtualenv <my-venv>
 pip install -r requirements.txt
+npm install write-good
+brew install rename \\ Mac
 ```
 
 You can find instructions for installing/using virtualenv and pip [here](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/).
