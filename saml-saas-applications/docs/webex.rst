@@ -6,22 +6,22 @@ BIG-IP as SAML IdP Configuration
 --------------------------------
 This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure WebEx:
 
-#. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**
-#. Select the **Federation** category.
-#. Select **SAML Identity Provider for SaaS Application** to configure BIG-IP as a SAML Identity Provider.
+#. Logon to the BIG-IP user interface and click ``Access -> Guided Configuration``
+#. Select the ``Federation`` category.
+#. Select ``SAML Identity Provider for SaaS Application`` to configure BIG-IP as a SAML Identity Provider.
 #. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
-- Provide the **Identity Provider** details.
-- Provide the **Virtual Server** configuration details.
-- Configured the **Authentication** method to use for the SAML Identity Provider.
+- Provide the ``Identity Provider`` details.
+- Provide the ``Virtual Server`` configuration details.
+- Configured the ``Authentication`` method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
 WebEx Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
-The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click **Add**.
+The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click ``Add``.
 
-For example, to configure WebEx, select WebEx and click **Add**.
+For example, to configure WebEx, select WebEx and click ``Add``.
 
 Common Application Properties
 -----------------------------
@@ -35,7 +35,7 @@ Application Specific Properties
 -------------------------------
 
 To configure WebEx provide following inputs:
-	- **Domain Specific Id** : Provide your domain specific id from the SSO URL. For eg - If the SSO URL is https://testid.webex.com/dispatcher/SAML2AuthService?siteurl=testid, then testid is the domain specific id.
+	- ``Domain Specific Id`` : Provide your domain specific id from the SSO URL. For eg - If the SSO URL is https://testid.webex.com/dispatcher/SAML2AuthService?siteurl=testid, then testid is the domain specific id.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -53,14 +53,14 @@ Security Properties
 Deploy the Configuration
 ------------------------
 
-#. Deploy the configuration from the **Summary** screen.
-#. To retrieve the metadata for this configuration, navigate to **Access -> Federation -> Saml Identity Provider -> Local Idp Services**.
-#. Select the SAML SSO object created for for WebEx, and click **Export Metadata**.
+#. Deploy the configuration from the ``Summary`` screen.
+#. To retrieve the metadata for this configuration, navigate to ``Access -> Federation -> Saml Identity Provider -> Local Idp Services``.
+#. Select the SAML SSO object created for for WebEx, and click ``Export Metadata``.
 #. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the WebEx service.
 
 Test the Configuration
 ----------------------
 
-#. To test the configuration, click on the link *Click to test configuration* link on the Summary page.
+#. To test the configuration, click on the link ``Click to test configuration`` link on the Summary page.
 #. A succesful logon should display a Webtop that includes the IdP Initiated Applications.
 

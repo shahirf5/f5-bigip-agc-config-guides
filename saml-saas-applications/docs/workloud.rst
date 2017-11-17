@@ -6,22 +6,22 @@ BIG-IP as SAML IdP Configuration
 --------------------------------
 This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure workloud:
 
-#. Logon to the BIG-IP user interface and click **Access -> Guided Configuration**
-#. Select the **Federation** category.
-#. Select **SAML Identity Provider for SaaS Application** to configure BIG-IP as a SAML Identity Provider.
+#. Logon to the BIG-IP user interface and click ``Access -> Guided Configuration``
+#. Select the ``Federation`` category.
+#. Select ``SAML Identity Provider for SaaS Application`` to configure BIG-IP as a SAML Identity Provider.
 #. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
-- Provide the **Identity Provider** details.
-- Provide the **Virtual Server** configuration details.
-- Configured the **Authentication** method to use for the SAML Identity Provider.
+- Provide the ``Identity Provider`` details.
+- Provide the ``Virtual Server`` configuration details.
+- Configured the ``Authentication`` method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
 workloud Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
-The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click **Add**.
+The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click ``Add``.
 
-For example, to configure workloud, select workloud and click **Add**.
+For example, to configure workloud, select workloud and click ``Add``.
 
 Common Application Properties
 -----------------------------
@@ -35,9 +35,9 @@ Application Specific Properties
 -------------------------------
 
 To configure workloud provide following inputs:
-	- **Oraganization ID** : Specify organization ID. SAML attribute Organization_ID in the assertion contains the value of Organization ID.
-	- **Customer ID** : Specify customer ID. Entity ID and ACS URIs contain the value of Customer ID.
-	- **Is workloud deployed in sandbox environment?** : Select your applicable deployment environment.
+	- ``Oraganization ID`` : Specify organization ID. SAML attribute Organization_ID in the assertion contains the value of Organization ID.
+	- ``Customer ID`` : Specify customer ID. Entity ID and ACS URIs contain the value of Customer ID.
+	- ``Is workloud deployed in sandbox environment?`` : Select your applicable deployment environment.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -55,14 +55,14 @@ Security Properties
 Deploy the Configuration
 ------------------------
 
-#. Deploy the configuration from the **Summary** screen.
-#. To retrieve the metadata for this configuration, navigate to **Access -> Federation -> Saml Identity Provider -> Local Idp Services**.
-#. Select the SAML SSO object created for for workloud, and click **Export Metadata**.
+#. Deploy the configuration from the ``Summary`` screen.
+#. To retrieve the metadata for this configuration, navigate to ``Access -> Federation -> Saml Identity Provider -> Local Idp Services``.
+#. Select the SAML SSO object created for for workloud, and click ``Export Metadata``.
 #. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the workloud service.
 
 Test the Configuration
 ----------------------
 
-#. To test the configuration, click on the link *Click to test configuration* link on the Summary page.
+#. To test the configuration, click on the link ``Click to test configuration`` link on the Summary page.
 #. A succesful logon should display a Webtop that includes the IdP Initiated Applications.
 
