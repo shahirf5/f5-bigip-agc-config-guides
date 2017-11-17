@@ -6,22 +6,22 @@ BIG-IP as SAML IdP Configuration
 --------------------------------
 This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Oracle Hyperion:
 
-#. Logon to the BIG-IP user interface and click ``Access -> Guided Configuration``
+#. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`
 #. Select the ``Federation`` category.
-#. Select ``SAML Identity Provider for SaaS Application`` to configure BIG-IP as a SAML Identity Provider.
+#. Select :guilabel:`SAML Identity Provider for SaaS Application` to configure BIG-IP as a SAML Identity Provider.
 #. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
-- Provide the ``Identity Provider`` details.
-- Provide the ``Virtual Server`` configuration details.
-- Configured the ``Authentication`` method to use for the SAML Identity Provider.
+- Provide the :guilabel:`Identity Provider` details.
+- Provide the :guilabel:`Virtual Server` configuration details.
+- Configure the :guilabel:`Authentication` method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
 Oracle Hyperion Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
-The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click ``Add``.
+The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click :guilabel:`Add`.
 
-For example, to configure Oracle Hyperion, select Oracle Hyperion and click ``Add``.
+For example, to configure Oracle Hyperion, select Oracle Hyperion and click :guilabel:`Add`.
 
 Common Application Properties
 -----------------------------
@@ -35,8 +35,8 @@ Application Specific Properties
 -------------------------------
 
 To configure Oracle Hyperion provide following inputs:
-	- ``Server URL`` : Provide the server URL from. For eg - https://login.em2.oraclecloud.com.
-	- ``Tenant ID`` : Provide the tenant id from the Oracle Hyperion configuration
+	- :guilabel:`Server URL` : Provide the server URL from. For eg - https://login.em2.oraclecloud.com.
+	- :guilabel:`Tenant ID` : Provide the tenant id from the Oracle Hyperion configuration
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,14 +54,14 @@ Security Properties
 Deploy the Configuration
 ------------------------
 
-#. Deploy the configuration from the ``Summary`` screen.
-#. To retrieve the metadata for this configuration, navigate to ``Access -> Federation -> Saml Identity Provider -> Local Idp Services``.
-#. Select the SAML SSO object created for for Oracle Hyperion, and click ``Export Metadata``.
+#. Deploy the configuration from the :guilabel:`Summary` screen.
+#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access -> Federation -> Saml Identity Provider -> Local Idp Services`.
+#. Select the SAML SSO object created for for Oracle Hyperion, and click :guilabel:`Export Metadata`.
 #. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the Oracle Hyperion service.
 
 Test the Configuration
 ----------------------
 
-#. To test the configuration, click on the link ``Click to test configuration`` link on the Summary page.
+#. To test the configuration, click on the link :guilabel:`Click to test configuration` on the Summary page.
 #. A succesful logon should display a Webtop that includes the IdP Initiated Applications.
 

@@ -6,22 +6,22 @@ BIG-IP as SAML IdP Configuration
 --------------------------------
 This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Amazon Web Services:
 
-#. Logon to the BIG-IP user interface and click ``Access -> Guided Configuration``
+#. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`
 #. Select the ``Federation`` category.
-#. Select ``SAML Identity Provider for SaaS Application`` to configure BIG-IP as a SAML Identity Provider.
+#. Select :guilabel:`SAML Identity Provider for SaaS Application` to configure BIG-IP as a SAML Identity Provider.
 #. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
-- Provide the ``Identity Provider`` details.
-- Provide the ``Virtual Server`` configuration details.
-- Configured the ``Authentication`` method to use for the SAML Identity Provider.
+- Provide the :guilabel:`Identity Provider` details.
+- Provide the :guilabel:`Virtual Server` configuration details.
+- Configure the :guilabel:`Authentication` method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
 Amazon Web Services Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
-The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click ``Add``.
+The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click :guilabel:`Add`.
 
-For example, to configure Amazon Web Services, select Amazon Web Services and click ``Add``.
+For example, to configure Amazon Web Services, select Amazon Web Services and click :guilabel:`Add`.
 
 Common Application Properties
 -----------------------------
@@ -35,9 +35,9 @@ Application Specific Properties
 -------------------------------
 
 To configure Amazon Web Services provide following inputs:
-	- ``AWS Service Account Number`` : Provide your AWS Account ID from your AWS Account Settings.
-	- ``AWS IdP Role Name`` : Provide the AWS Role which has Identity Provider Access configured in AWS Roles.
-	- ``AWS IdP Name`` : Provide the name of the identity provider. This is the identity provider configured in the AWS service.
+	- :guilabel:`AWS Service Account Number` : Provide your AWS Account ID from your AWS Account Settings.
+	- :guilabel:`AWS IdP Role Name` : Provide the AWS Role which has Identity Provider Access configured in AWS Roles.
+	- :guilabel:`AWS IdP Name` : Provide the name of the identity provider. This is the identity provider configured in the AWS service.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -55,14 +55,14 @@ Security Properties
 Deploy the Configuration
 ------------------------
 
-#. Deploy the configuration from the ``Summary`` screen.
-#. To retrieve the metadata for this configuration, navigate to ``Access -> Federation -> Saml Identity Provider -> Local Idp Services``.
-#. Select the SAML SSO object created for for Amazon Web Services, and click ``Export Metadata``.
+#. Deploy the configuration from the :guilabel:`Summary` screen.
+#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access -> Federation -> Saml Identity Provider -> Local Idp Services`.
+#. Select the SAML SSO object created for for Amazon Web Services, and click :guilabel:`Export Metadata`.
 #. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the Amazon Web Services service.
 
 Test the Configuration
 ----------------------
 
-#. To test the configuration, click on the link ``Click to test configuration`` link on the Summary page.
+#. To test the configuration, click on the link :guilabel:`Click to test configuration` on the Summary page.
 #. A succesful logon should display a Webtop that includes the IdP Initiated Applications.
 

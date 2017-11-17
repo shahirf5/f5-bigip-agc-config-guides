@@ -6,22 +6,22 @@ BIG-IP as SAML IdP Configuration
 --------------------------------
 This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Thirdlight:
 
-#. Logon to the BIG-IP user interface and click ``Access -> Guided Configuration``
+#. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`
 #. Select the ``Federation`` category.
-#. Select ``SAML Identity Provider for SaaS Application`` to configure BIG-IP as a SAML Identity Provider.
+#. Select :guilabel:`SAML Identity Provider for SaaS Application` to configure BIG-IP as a SAML Identity Provider.
 #. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
-- Provide the ``Identity Provider`` details.
-- Provide the ``Virtual Server`` configuration details.
-- Configured the ``Authentication`` method to use for the SAML Identity Provider.
+- Provide the :guilabel:`Identity Provider` details.
+- Provide the :guilabel:`Virtual Server` configuration details.
+- Configure the :guilabel:`Authentication` method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
 Thirdlight Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
-The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click ``Add``.
+The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click :guilabel:`Add`.
 
-For example, to configure Thirdlight, select Thirdlight and click ``Add``.
+For example, to configure Thirdlight, select Thirdlight and click :guilabel:`Add`.
 
 Common Application Properties
 -----------------------------
@@ -35,8 +35,8 @@ Application Specific Properties
 -------------------------------
 
 To configure Thirdlight provide following inputs:
-	- ``Unique Company Identifier`` : From the ACS URL, https://$subDomain$.thirdlight.com/samlconsume.tlx/1234567890/module.php/saml/sp/saml2-acs.php/samlauth, then the Unique Company Identifier is 1234567890
-	- ``Sub Domain`` : If your SSO URL is http://company.thirdlight.com/saml/sp, then sub domain is company.
+	- :guilabel:`Unique Company Identifier` : From the ACS URL, https://$subDomain$.thirdlight.com/samlconsume.tlx/1234567890/module.php/saml/sp/saml2-acs.php/samlauth, then the Unique Company Identifier is 1234567890
+	- :guilabel:`Sub Domain` : If your SSO URL is http://company.thirdlight.com/saml/sp, then sub domain is company.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -54,14 +54,14 @@ Security Properties
 Deploy the Configuration
 ------------------------
 
-#. Deploy the configuration from the ``Summary`` screen.
-#. To retrieve the metadata for this configuration, navigate to ``Access -> Federation -> Saml Identity Provider -> Local Idp Services``.
-#. Select the SAML SSO object created for for Thirdlight, and click ``Export Metadata``.
+#. Deploy the configuration from the :guilabel:`Summary` screen.
+#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access -> Federation -> Saml Identity Provider -> Local Idp Services`.
+#. Select the SAML SSO object created for for Thirdlight, and click :guilabel:`Export Metadata`.
 #. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the Thirdlight service.
 
 Test the Configuration
 ----------------------
 
-#. To test the configuration, click on the link ``Click to test configuration`` link on the Summary page.
+#. To test the configuration, click on the link :guilabel:`Click to test configuration` on the Summary page.
 #. A succesful logon should display a Webtop that includes the IdP Initiated Applications.
 
