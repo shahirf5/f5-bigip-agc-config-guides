@@ -7,7 +7,7 @@ BIG-IP as SAML IdP Configuration
 This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure Atlassian:
 
 #. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`
-#. Select the ``Federation`` category.
+#. Select the :guilabel:`Federation` category.
 #. Select :guilabel:`SAML Identity Provider for SaaS Application` to configure BIG-IP as a SAML Identity Provider.
 #. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
