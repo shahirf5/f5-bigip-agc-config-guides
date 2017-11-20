@@ -1,10 +1,10 @@
 ======================================================================================
-SaaS Application Configuration Guide : First Eagle Investment Management
+SaaS Application Configuration Guide : vena
 ======================================================================================
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure First Eagle Investment Management:
+This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure vena:
 
 #. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`
 #. Select the :guilabel:`Federation` category.
@@ -16,12 +16,12 @@ This document describes the configuration for a SAML Identity Provider for SaaS 
 - Configure the :guilabel:`Authentication` method to use for the SAML Identity Provider.
 - After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
-First Eagle Investment Management Configuration in Guided Configuration Workflow
+vena Configuration in Guided Configuration Workflow
 ---------------------------------------------------------------------------------------------------------------------------
 
 The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click :guilabel:`Add`.
 
-For example, to configure First Eagle Investment Management, select First Eagle Investment Management and click :guilabel:`Add`.
+For example, to configure vena, select vena and click :guilabel:`Add`.
 
 Common Application Properties
 -----------------------------
@@ -34,8 +34,7 @@ Common Application Properties
 Application Specific Properties
 -------------------------------
 
-To configure First Eagle Investment Management provide following inputs:
-	- :guilabel:`Sub Domain` : Specify Sub Domain value. Entity Id uses this value. For example, if your entityId is https://acme.feim.com/acme_sp then your sub domain is acme.
+vena does not require any user input.
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
@@ -55,8 +54,8 @@ Deploy the Configuration
 
 #. Deploy the configuration from the :guilabel:`Summary` screen.
 #. To retrieve the metadata for this configuration, navigate to :menuselection:`Access -> Federation -> Saml Identity Provider -> Local Idp Services`.
-#. Select the SAML SSO object created for for First Eagle Investment Management, and click :guilabel:`Export Metadata`.
-#. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the First Eagle Investment Management service.
+#. Select the SAML SSO object created for for vena, and click :guilabel:`Export Metadata`.
+#. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the vena service.
 
 Test the Configuration
 ----------------------
