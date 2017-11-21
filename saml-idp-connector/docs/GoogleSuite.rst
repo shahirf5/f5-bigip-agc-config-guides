@@ -37,32 +37,32 @@ Advanced Connector Settings
 If the basic settings do not provide the information you need to configure, show Advanced Settings by clicking :guilabel:`Show Advanced Settings`.
 
 Endpoint Settings
-~~~~~~~~~~~~~~~~~
+`````````````````
 
-Select :guilabel:`POST/Redirect`  as your Single Sign-on Service Binding.
+- Select :guilabel:`POST/Redirect`  as your Single Sign-on Service Binding.
 
 Assertion Settings
-~~~~~~~~~~~~~~~~~~
+``````````````````
 
-Specify whether the Identity Location is :guilabel:`Subject` or :guilabel:`Attribute`.
+- Specify whether the Identity Location is :guilabel:`Subject` or :guilabel:`Attribute`.
 
 Security Settings
-~~~~~~~~~~~~~~~~~
+`````````````````
 
-Select :guilabel:`Yes` to sign Authentication requests, and select the appropriate signing algorithm.
+- Select :guilabel:`Yes` to sign Authentication requests, and select the appropriate signing algorithm.
 
 Certificate Settings
-~~~~~~~~~~~~~~~~~~~~
+````````````````````
 
-Select :guilabel:`Yes`  if you want to detach the signature when using the redirect binding.
+- Select :guilabel:`Yes`  if you want to detach the signature when using the redirect binding.
 
-Click :guilabel:`Save & Next`. Complete the subsequent steps.
+- Click :guilabel:`Save & Next`. Complete the subsequent steps.
 
 Deploy the Configuration
 ------------------------
 
 #. Deploy the configuration from the :guilabel:`Summary` screen.
-#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access -> Federation -> SAML Service Provider -> Local SP Services`.
+#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access --> Federation --> SAML Service Provider --> Local SP Services`.
 #. Select the SAML SP object created by your workflow, and click :guilabel:`Export Metadata`.
 #. Use the SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console.
 
@@ -73,5 +73,5 @@ Setup Google Suite as Identity Provider
 Test the configuration
 ----------------------
 
-#. To test the configuration, click on the link *Click to test configuration* on the Summary page.
+#. To test the configuration, click on the link :guilabel:`Click to test configuration` on the Summary page.
 #. Provide test user credentials, and verify that the access to the backend application succeeds.
