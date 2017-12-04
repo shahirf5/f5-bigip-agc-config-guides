@@ -18,7 +18,6 @@ SAML IDP Connector
    :glob:
 
    saml-idp-connector/*
-   saml-saas-applications/*
 
 Overview of SAML IDP connector guides
 

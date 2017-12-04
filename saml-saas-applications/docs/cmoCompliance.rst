@@ -4,64 +4,63 @@ SaaS Application Configuration Guide : CMO Compliance
 
 BIG-IP as SAML IdP Configuration
 --------------------------------
-This document describes configuration steps for configuring an AGC SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure CMO Compliance:
+This document describes the configuration for a SAML Identity Provider for SaaS Application workflow using a SaaS Application template. Follow the steps below to configure CMO Compliance:
 
-#. Logon to BIG-IP using UI and click on **Access -> Guided Configuration**
-#. Select **Federation** category of use case configuration
-#. Choose **SAML Identity Provider for SaaS Application** for configuring BIG-IP as SAML Identity Provider
-#. Review **Required Configuration** and complete the following workflow steps before configuring the SaaS Application
+#. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`
+#. Select the :guilabel:`Federation` category.
+#. Select :guilabel:`SAML Identity Provider for SaaS Application` to configure BIG-IP as a SAML Identity Provider.
+#. Review the Required Configuration information, and complete the following  required step before you configure the SaaS Application.
 
-#. Identity Provider
-#. Virtual Server
-#. Authentication method to use for SAML Identity Provider
-#. After completing SaaS Application Configuration, complete Endpoint Checks and Customization configuration steps
+- Provide the :guilabel:`Identity Provider` details.
+- Provide the :guilabel:`Virtual Server` configuration details.
+- Configure the :guilabel:`Authentication` method to use for the SAML Identity Provider.
+- After you confgure the SaaS Application Configuration, configure (optional) Endpoint Checks and Customization settings.
 
-CMO Compliance Configuration in AGC Workflow
----------------------------------------------------------------------------
+CMO Compliance Configuration in Guided Configuration Workflow
+---------------------------------------------------------------------------------------------------------------------------
 
-The SaaS Application step displays a list of SaaS Applications that can be configured as SAML Service Provider Application. Select a specific SaaS Application and click Add.
-For example to configure
-CMO Compliance, select
-CMO Compliance and click on **Add** button
+The SaaS Application screen displays a list of applications from which you can select to configure SAML Service Provider applications. Select a specific application and click :guilabel:`Add`.
 
-Common SaaS Application Properties
-----------------------------------
+For example, to configure CMO Compliance, select CMO Compliance and click :guilabel:`Add`.
 
-#. Enter application name. This is used by APM to internally identify the configuration details for the SaaS application and SAML service provider for it.
-#. Select if application supports IDP Initiated requests. If IdP Initiated is selected, application resource is displayed on Webtop.
-#. Enter or modify Caption, this is used to display the application resource on the Webtop
-#. Enter Description (optional) for this application
+Common Application Properties
+-----------------------------
 
-SaaS Application Specific Properties
-------------------------------------
+#. Specify the application name. The system uses the name internally, to identify configuration details for the application and the SAML service provider for it.
+#. Select whether the application supports IDP Initiated requests. Select the IdP Initiated option to display the application resource on the Webtop.
+#. Specify or modify the caption. The Webtop uses the caption to display the application resource.
+#. Specify an optional description for the application.
+
+Application Specific Properties
+-------------------------------
 
 To configure CMO Compliance provide following inputs:
-	- **Sub Domain** : Provide the Sub Domain. For e.g. if the Entity Id URL is http://company.cmo-compliance.com/adfs/services/trust, the Sub Domain is company
+	- :guilabel:`Sub Domain` : Provide the Sub Domain. For e.g. if the Entity Id URL is http://company.cmo-compliance.com/adfs/services/trust, the Sub Domain is company
 
 Additional SAML Attributes and ACS Properties
 ---------------------------------------------
 
-#. Configure any additional attribute values which must be send in the SAML assertion to SaaS Application. SAML Attribute has a attribute name and attribute value. Attribute value can be specified from session variables which are set by specific authentication method or from result of a query against LDAP or Active Directory.
-#. Configure any additional Assertion Consumer Service URI that are required by SaaS Application.
+#. Configure any additional attribute values to include in the SAML assertion to SaaS Application. Each SAML Attribute has an attribute name and attribute value. The session variable values can specify attribute values. Configure an AD or LDAP query to include specific attributes in session variables.
+#. Configure an additional Assertion Consumer Service URI if the application requires such a URI.
 
 Security Properties
 -------------------
-#. Select if assertion and response must be signed.
-#. Select if it requires Authentication Requests must be signed. It so, configure signing certificate.
-#. Select if assertions must be encrypted. If so, configure encryption algorithm and encryption certificate.
-#. Complete the workflow configuration by configuring any endpoint checks and customization configuration.
+#. Specify whether to sign the assertion and response, and specify the signing algorithm.
+#. Specify whether to require a signed Authentication Request. If required, select a signing certificate.
+#. Specify whether to encrypt assertions. If required, speciofy the encryption algorithm and select the encryption certificate.
+#. Complete the workflow configuration by configuring optional endpoint checks and customization.
 
 Deploy the Configuration
 ------------------------
-#. Click **Access > Federation > Saml Identity Provider > Local Idp Services**.
-#. Identify the Saml SSO object created for for CMO Compliance and export SAML Metadata.
 
-You can use the exported IdP SAML Metadata to configure the IdP Provider configuration in CMO Compliance service.
+#. Deploy the configuration from the :guilabel:`Summary` screen.
+#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access -> Federation -> Saml Identity Provider -> Local Idp Services`.
+#. Select the SAML SSO object created for for CMO Compliance, and click :guilabel:`Export Metadata`.
+#. Use the exported IdP SAML Metadata to configure the IdP Provider configuration in the CMO Compliance service.
 
 Test the Configuration
----------------------------------
+----------------------
 
-#. After configuration is deployed, click on **Summary** step of the configuration.
-#. On Summary page, **Click to test configuration** link launches a browser window connecting to the Virtual Server configured in the workflow.
-#. After successful logon, Webtop with IdP Initiated Applications is displayed.
+#. To test the configuration, click on the link :guilabel:`Click to test configuration` on the Summary page.
+#. A succesful logon should display a Webtop that includes the IdP Initiated Applications.
 

@@ -4,68 +4,75 @@ IdP Connector Configuration Guide : PingOne
 
 BIG-IP as SAML SP Configuration
 -------------------------------
-This document describes the configuration steps for configuring an external IDP Connector using an IDP Connector template in Access Guided Configuration's SAML Service Provider workflow. Follow the steps below to configure PingOne:
+This document describes the configuration for an external IDP Connector using an IDP Connector template in the Guided Configuration SAML Service Provider workflow. Follow the steps below to configure PingOne:
 
-#. Logon to BIG-IP using UI and click on Access -> Guided Configuration
-#. Select Federation category of use case configuration
-#. Choose SAML Service Provider for configuration BIG-IP as SAML Service Provider.
-#. Review Required Configuration and complete steps to configure before configuring the External IDP Connector.
-#. Service Provider.
-#. Virtual Server.
-#. After completing the External IDP connector, complete the Pool Settings and the optional Endpoint and SSO settings.
+#. Logon to the BIG-IP user interface and click :menuselection:`Access -> Guided Configuration`.
+#. Select the :guilabel:`Federation` category.
+#. Select the :guilabel:`SAML Service Provider` to configure BIG-IP as a SAML Service Provider.
+#. Review the Required Configuration information and complete the following required steps before you configure the External IDP Connector.
 
-External IDP Connector Configuration in AGC workflow
-----------------------------------------------------
+- Provide the :guilabel:`Service Provider` details.
+- Provide the :guilabel:`Virtual Server` configuration details.
+- After you configure the External IDP connector, configure the Pool Settings and (optional) Endpoint Check and SSO settings.
 
-(Note - Only one  IDP Connector can be configured for a Service Provider.)
+External IDP Connector Configuration in Guided Configuration
+------------------------------------------------------------
 
-Under the External Identity Provider Connector Settings, first Select **Template**  option for the method to configure your IDP connector. Then choose an Identity Provider from the provided set. Search for PingOne in the Search bar. (If you cannot find an Identity Provider which you are looking for in the set, then you can use the other options like "Metadata"  or "Custom"  and proceed with the configuration.)
+.. note::  Saml SP configuration supports only one IDP Connector for a Service Provider.
 
-Select PingOne and click Add button. Enter a name for the connector.
+#. On the External Identity Provider Connector Settings screen, select the :guilabel:`Template`  method.
+#. Select the Identity Provider from the provided set. You can search for PingOne in the Search bar. If a template for your application is not available, you can use the options :guilabel:`Metadata` or :guilabel:`Custom`, and configure the Identity Providers accordingly.
+
+Select PingOne and click :guilabel:`Add`. Specify a name for the connector.
 
 IDP Connector Specific Properties
 ---------------------------------
 
 To configure PingOne provide following inputs:
-	- **Entity Id** : Provide the entity id
-	- **IdP ID** : Provide the IdP ID from the \'Initiate Single Sign - on URL \' in PingOne.For eg - https: //sso.connect.pingidentity.com/sso/idp/SSO.saml2?idpid=testIdp then testIdp is idpId
+	- :guilabel:`Entity Id` : Provide the entity id
+	- :guilabel:`IdP ID` : Provide the IdP ID from the \'Initiate Single Sign - on URL \' in PingOne.For eg - https: //sso.connect.pingidentity.com/sso/idp/SSO.saml2?idpid=testIdp then testIdp is idpId
 
 Advanced Connector Settings
 ---------------------------
 
-If the default basic settings do not work for you, you can go to Advanced Settings by clicking on **Show Advanced Settings**.
+If the basic settings do not provide the information you need to configure, show Advanced Settings by clicking :guilabel:`Show Advanced Settings`.
 
 Endpoint Settings
-~~~~~~~~~~~~~~~~~
+`````````````````
 
-Select **POST/Redirect**  as your Single Sign-on Service Binding.
+- Select :guilabel:`POST/Redirect`  as your Single Sign-on Service Binding.
 
 Assertion Settings
-~~~~~~~~~~~~~~~~~~
+``````````````````
 
-Specify the Identity Location whether it is **Subject** or **Attribute**.
+- Specify whether the Identity Location is :guilabel:`Subject` or :guilabel:`Attribute`.
 
 Security Settings
-~~~~~~~~~~~~~~~~~
+`````````````````
 
-Select **Yes**  if you need the Authentication to be signed and select the appropriate signing algorithm.
+- Select :guilabel:`Yes` to sign Authentication requests, and select the appropriate signing algorithm.
 
 Certificate Settings
-~~~~~~~~~~~~~~~~~~~~
+````````````````````
 
-Select **Yes**  if you want to detach signature when using the redirect binding.
+- Select :guilabel:`Yes`  if you want to detach the signature when using the redirect binding.
 
-Click **Save & Next**. Complete the subsequent steps and then deploy the configuration.
+- Click :guilabel:`Save & Next`. Complete the subsequent steps.
 
-Go to **Access -> Federation -> SAML Service Provider -> Local SP Services**, identify the SAML SP object created by your workflow, select it and click Export Metadata. This is the SAML metadata file which can be used to configure the Service Provider configuraton in the external Identity Provider Administration console.
+Deploy the Configuration
+------------------------
 
+#. Deploy the configuration from the :guilabel:`Summary` screen.
+#. To retrieve the metadata for this configuration, navigate to :menuselection:`Access --> Federation --> SAML Service Provider --> Local SP Services`.
+#. Select the SAML SP object created by your workflow, and click :guilabel:`Export Metadata`.
+#. Use the SAML metadata file to configure the Service Provider configuraton in the external Identity Provider Administration console.
 
 Setup PingOne as Identity Provider
 -------------------------------------------------------------
 
 
-Testing your configuration
---------------------------
+Test the configuration
+----------------------
 
-#. To test the configuration, click on the "Click to test configuration" link on the AGC Summary page.
-#. Provide the test user's credentials and verify if the access to backend application succeeds.
+#. To test the configuration, click on the link :guilabel:`Click to test configuration` on the Summary page.
+#. Provide test user credentials, and verify that the access to the backend application succeeds.

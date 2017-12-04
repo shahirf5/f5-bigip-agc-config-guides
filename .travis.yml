@@ -19,6 +19,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: 2.0
-    repo: F5DevCentral/f5-bigip-agc-config-guides
+    repo: f5devcentral/f5-bigip-agc-config-guides
   script:
   - ./scripts/deploy-docs.sh publish-product-docs-to-prod agc v2.0
