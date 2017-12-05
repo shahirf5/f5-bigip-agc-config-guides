@@ -14,8 +14,6 @@ script:
 # Publish docs to clouddocs.f5.com/products/agc/v2.0
 deploy:
 - provider: script
-  env:
-    - BUILD_HTML_DIR=build/html
   skip_cleanup: true
   on:
     branch: 2.0
